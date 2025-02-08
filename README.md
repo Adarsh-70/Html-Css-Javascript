@@ -2,8 +2,8 @@ This repository contains web development projects built using HTML, CSS, and Jav
 
 Technologies Used
 
-HTML5: For structuring web pages.
+HTML: For structuring web pages.
 
-CSS3: For styling and layout, including Flexbox and Grid.
+CSS: For styling and layout, including Flexbox and Grid.
 
-JavaScript (ES6+): For interactivity and dynamic content manipulation.
+JavaScript: For interactivity and dynamic content manipulation.
