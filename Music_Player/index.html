@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <img src="https://res.cloudinary.com/dbzvr3l7j/image/upload/v1740903253/library_bdox3n.png" class="icon" id="menu-icon" alt="Menu Icon" />
+
+      <nav>
+        <img src="https://res.cloudinary.com/dbzvr3l7j/image/upload/v1740903344/cancel_nzizke.png" class="icon" id="cancel-icon" alt="Close Menu">
+        <h3>Music Player</h3>
+        <div>
+          <img src="https://res.cloudinary.com/dbzvr3l7j/image/upload/v1740903397/add_fi1atl.png" class="icon add-icon" id="add-icon" alt="Add Icon" />
+          <span>Add New Song</span>
+          <div class="new-song-container" id="new-song-container">
+            <form>
+              <label for="file-picker">Upload a Song</label>
+              <input type="file" id="file-picker" aria-describedby="file-instructions"/>
+              <small id="file-instructions">Supported formats: MP3, WAV, FLAC</small>
+              <input type="submit" value="Upload">
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="music-card">
+        <div id="album-img"></div>
+        <div class="track-slider"><br>
+          <label for="track-slider"></label>
+          <input type="range" value="0" min="1" max="100" id="track-slider" class="track-slider" aria-label="Track Progress"/>
+        </div>
+        <div class="icons">
+          <div>
+            <img src="https://res.cloudinary.com/dbzvr3l7j/image/upload/v1740903470/mix_e5t4al.png" class="icon" id="mix" alt="Mix Songs" />
+            <img src="https://res.cloudinary.com/dbzvr3l7j/image/upload/v1740903503/prev-song_voxy96.png" class="icon" id="left" alt="Previous Song" />
+            <span id="play" class="icon" role="button" aria-label="Play">►</span>
+            <img src="https://res.cloudinary.com/dbzvr3l7j/image/upload/v1740903595/next-song_whkfur.png" class="icon" id="right" alt="Next Song" />
+            <img src="https://res.cloudinary.com/dbzvr3l7j/image/upload/v1740903641/repeat_i55qol.png" class="icon" id="repeat" alt="Repeat Song" />
+          </div>
+
+          <div class="volume">
+            <img src="https://res.cloudinary.com/dbzvr3l7j/image/upload/v1740903677/volume_bk2vvs.png" class="icon" id="volume" alt="Volume Icon" />
+            <label for="volume-slider"></label>
+            <input type="range" min="1" max="100" value="60" id="volume-slider" aria-label="Volume Control"/>
+          </div>
+        </div>
+        <div>
+          <span class="title">Now Playing</span>
+          <h2 id="current-song-name">Dark Aria</h2>
+          <span id="change-warning"></span>
+        </div>
+        <audio id="music" src="https://res.cloudinary.com/dbzvr3l7j/video/upload/v1740240414/Dark_Aria_from_Solo_Leveling_1_dxyhls.mp3"></audio>
+      </div>
+    </div>
+  </body>
+</html>
