@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neumorphism Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>    
+    <div class="container">
+        <h2>Password Generator</h2>
+        <div class="result-container">
+            <textarea id="PasswordResult" readonly></textarea>
+        </div>
+        <div class="settings">
+            <div class="setting">
+                <label for="Passwordlength">Password length</label>
+                <input type="number" id="Passwordlength" min="4" max="20" value="8" />
+            </div>
+            <div class="setting">
+                <label for="uppercase">Include uppercase letters</label>
+                <input type="checkbox" id="uppercase" checked />
+            </div>
+            <div class="setting">
+                <label for="lowercase">Include lowercase letters</label>
+                <input type="checkbox" id="lowercase" checked />
+            </div>
+            <div class="setting">
+                <label for="numbers">Include numbers</label>
+                <input type="checkbox" id="numbers" checked />
+            </div>
+            <div class="setting">
+                <label for="symbols">Include symbols</label>
+                <input type="checkbox" id="symbols" checked />
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="btn btn-large" id="generateBtn">
+                <i class="fas fa-key"></i> Generate
+            </button>
+            <button class="btn" id="clipboardBtn">
+                <i class="far fa-clipboard"></i> Copy
+            </button>
+        </div>
+        <div class="result-container">
+            <label for="PasswordResult" class="sr-only">Generated Password</label>
+            <textarea id="PasswordResult" readonly></textarea>
+            <i class="fas fa-eye" id="togglePassword"></i>
+          </div>
+          <div class="strength-indicator" id="strengthIndicator">Strength: </div>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="theme-toggle">
+                <input type="checkbox" id="theme-toggle" title="Toggle Dark Mode">
+                <span class="slider round"></span>
+            </label>
+        </div>  
+    </div>
+    <script src="script.js"></script>
+    <script>
+        const toggleSwitch = document.querySelector('#theme-toggle');
+        const currentTheme = localStorage.getItem("theme");
+
+        if (currentTheme) {
+            document.documentElement.setAttribute("data-theme", currentTheme);
+            if (currentTheme === "dark") {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        toggleSwitch.addEventListener("change", function (e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark");
+            } else {
+                document.documentElement.setAttribute("data-theme", "light");
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
+</body>
+
+</html>
